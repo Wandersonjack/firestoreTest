@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         button_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                registerJob(getUserFromForm());
+                registerJob();
             }
         });
 
@@ -95,17 +95,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
     }
 
 
 
 
     /**method that register data*/
-    public void registerJob(Users users){
-        Map<String, Users> user = new HashMap<>();
+    public void registerJob(){
+        Map<String, Object> user = new HashMap<>();
+        user.put("name","jose");
+        user.put("job", "ui desin");
 
         mFirestore.collection("Users")
                 .add(user)
@@ -124,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /**getting data from form*/
+    /**getting data from form
 
     private Users getUserFromForm(){
         String nome = name.getText().toString();
@@ -132,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         Users usersObject = new Users(nome , trabalho);
         return usersObject;
     }
-
+     */
 
 
 
